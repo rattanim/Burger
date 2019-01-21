@@ -1,5 +1,5 @@
 var express = require("express");
-var rputer = express.Router();
+var router = express.Router();
 var burger = require("../models/burger.js");
 router.get("/", function(req, res) {
     res.redirect("/burgers");
@@ -7,7 +7,7 @@ router.get("/", function(req, res) {
 
 router.get("/burgers", function(req, res) {
     burger.all(function(burgerData) {
-        releaseEvents.render("index", { burger_data: burgerData });
+        res.render("index", { burger_data: burgerData });
     });
 });
 

@@ -13,7 +13,7 @@ function objToSql(ob) {
 
 
     for (var key in ob) {
-    arr.push(key + "=" + pb[key]);
+    arr.push(key + "=" + ob[key]);
 }
 return arr.toString();
 }
@@ -60,6 +60,7 @@ var orm = {
            if (err) {
                throw err;
            }
+           cb(result);
        });
    }
 };
