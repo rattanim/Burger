@@ -7,6 +7,7 @@ router.get("/", function(req, res) {
 
 router.get("/burgers", function(req, res) {
     burger.all(function(burgerData) {
+        console.log("i got data");
         res.render("index", { burger_data: burgerData });
     });
 });
